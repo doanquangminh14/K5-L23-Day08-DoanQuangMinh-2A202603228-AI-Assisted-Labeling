@@ -1,1 +1,2 @@
 step,images,minutes,note
+gold_manual,4,29,gán tay 4 ảnh gold trong CVAT (rectangle) - không dùng AI; 25 phút gán + 4 phút sửa box < 20 px ở img_001
