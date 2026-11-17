@@ -1,2 +1,3 @@
 step,images,minutes,note
 gold_manual,4,29,gán tay 4 ảnh gold trong CVAT (rectangle) - không dùng AI; 25 phút gán + 4 phút sửa box < 20 px ở img_001
+batch_review,24,65,duyệt 24 ảnh batch có pre-label + 12 bẫy trong CVAT theo checklist 4 bước (không tính giờ nghỉ)
