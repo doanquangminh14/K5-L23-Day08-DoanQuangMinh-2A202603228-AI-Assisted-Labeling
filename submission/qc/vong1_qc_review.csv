@@ -1,0 +1,9 @@
+image,object_id,error_type,reviewer,note
+img_003.jpg,,khong,minh,"ba gác #20 three_wheeler đúng; xe tải xa #19 truck đúng; không gán quang gánh/hàng"
+img_006.jpg,,khong,minh,"hẻm đông, xe máy đỗ thành hàng gán từng xe; người dắt xe đạp #86 bicycle đúng"
+img_013.jpg,151,sai_lop,minh,"xe van trắng chở khách (kiểu Toyota HiAce) phía sau tuk-tuk bị gán truck; theo guideline mục 2 phải là car (minivan) hoặc bus (minibus chở khách), không phải truck"
+img_014.jpg,,khong,minh,"quang gánh của người đi bộ không gán (đúng CAL-04); xe máy và người gán đủ"
+img_022.jpg,311,thua,minh,"ảnh đêm: box person rất lớn (250x406) bao rổ, sọt hàng và người đi xe máy bị nhoè; người này đã có box #295, nên #311 là box thừa"
+img_033.jpg,,khong,minh,"ngược sáng; car #580 #584 #585 và xe máy gần camera đúng; vật xa nhỏ không kiểm từng cái"
+img_035.jpg,660,thua,minh,"xích lô ở giữa đường có 2 box three_wheeler: #660 chỉ bao phần mui + người đạp, trùng xe với #650"
+img_035.jpg,650,sai_vi_tri_kich_thuoc,minh,"box three_wheeler chỉ bao thân dưới xích lô, thiếu phần mui; đúng ra một box gồm cả xe + mui (guideline mục 2)"

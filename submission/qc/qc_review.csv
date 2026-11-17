@@ -1,0 +1,7 @@
+image,object_id,error_type,reviewer,note
+img_006.jpg,,khong,minh,"vòng 2: giữ như vòng 1, không lỗi; xe máy đỗ thành hàng gán từng xe, người dắt xe đạp #86 đúng"
+img_013.jpg,,khong,minh,"vòng 2: đã sửa lỗi vòng 1; xe van trắng giờ chỉ có 1 box car #142; tuk-tuk #143 three_wheeler đúng"
+img_018.jpg,229,sai_lop,minh,"ảnh nhìn từ trên cao: xe khách nhỏ màu kem (minibus kiểu Hyundai County) ở giữa ngã tư bị gán three_wheeler 0.53; theo guideline mục 2 phải là bus (minibus chở khách). Đã sửa thành bus sau QC vòng 2 (batch (4).zip), release đã build lại"
+img_022.jpg,,khong,minh,"vòng 2 (ca khó, ảnh đêm): đã xoá box person thừa của vòng 1; người đi xe máy nhoè bên phải có box #299 và xe #308"
+img_027.jpg,,khong,minh,"xe máy và người gần camera gán đủ; xe đạp dựng sau xe máy đỏ #451 đúng; xích lô xa bên phải #450 three_wheeler đúng"
+img_033.jpg,,khong,minh,"vòng 2: giữ như vòng 1, không lỗi; car #580 #584 #585 đúng"
