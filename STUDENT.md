@@ -5,7 +5,7 @@
 - Lớp (L2 / L3 / khác): L2
 - Tài khoản GitHub: doanquangminh14
 - Repo bài nộp (URL): https://github.com/doanquangminh14/K5-L23-Day08-DoanQuangMinh-2A202603228-AI-Assisted-Labeling
-- Commit chốt bài (hash): 6b9828f
+- Commit chốt bài (hash): f1217b2
 - Máy: Windows 11 Home, GPU NVIDIA RTX 3050 Laptop 6GB (CUDA)
 - CVAT (Docker): v2.74.1 (server + UI), chạy local tại localhost:8080
 
