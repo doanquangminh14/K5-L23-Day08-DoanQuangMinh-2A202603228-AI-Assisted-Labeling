@@ -11,7 +11,7 @@
 
 ## Kết quả tóm tắt (điền cuối bài; số lấy từ `submission/qc/*`, kèm mẫu số)
 
-- Máy: accepted / edited / deleted: 570/690 = 82.6% / 25/690 = 3.6% / 92/690 = 13.3% (mẫu số: 690 box máy); added: 52/648 = 8.0% (mẫu số: 648 đối tượng sau duyệt)
+- Máy: accepted / edited / deleted: 565/690 = 81.9% / 26/690 = 3.8% / 96/690 = 13.9% (mẫu số: 690 box máy); added: 52/644 = 8.1% (mẫu số: 644 đối tượng sau duyệt)
 - So với gold: precision / recall của **máy** 74.7% (65/87) / 75.6% (65/86 đối tượng gold)
 - Bắt bẫy: lần đầu 5/12 = 41.7%; sau duyệt lại 10/12 = 83.3% (2 bẫy còn lọt có đáp án sai, xem REPORT mục 3)
 - Thời gian: gán tay 7.3 phút/ảnh (29/4); duyệt có pre-label 2.7 phút/ảnh (65/24)

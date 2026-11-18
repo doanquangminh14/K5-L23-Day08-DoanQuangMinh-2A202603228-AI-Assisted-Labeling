@@ -36,17 +36,17 @@ Số liệu dưới đây thống kê trên bản nhãn cuối (sau QC vòng 2).
 
 | Trạng thái | Số lượng | Tỉ lệ | Mẫu số |
 |---|---|---|---|
-| accepted | 570 | 570/690 = 82.6% | 690 box pre-label |
-| edited | 25 | 25/690 = 3.6% | 690 box pre-label |
-| deleted | 92 | 92/690 = 13.3% | 690 box pre-label |
-| added | 52 | 52/648 = 8.0% | 648 đối tượng sau duyệt |
+| accepted | 565 | 565/690 = 81.9% | 690 box pre-label |
+| edited | 26 | 26/690 = 3.8% | 690 box pre-label |
+| deleted | 96 | 96/690 = 13.9% | 690 box pre-label |
+| added | 52 | 52/644 = 8.1% | 644 đối tượng sau duyệt |
 
 Trong nhóm `deleted` và `added` có 12 trường hợp thực chất là đổi nhãn lớp (tọa độ box đúng nhưng sai tên lớp). Trừ đi phần này thì số đối tượng bị sót hoàn toàn rơi vào khoảng 52 − 12 = 40.
 
 - Lớp nào pre-label tệ nhất? Vì sao (dẫn ảnh)?
-  - Tệ nhất là `three_wheeler`: 21/41 box sinh ra bị mình xoá (51%), chỉ giữ nguyên 15/41. YOLOE thường xuyên nhận nhầm các vật thể có hình khối hộp thành xe ba bánh, lỗi này lặp lại nhiều lần: xe tải thùng kín ở img_003 (YOLO26 bắt đúng là `truck` 0.87 nhưng luật gộp lại ưu tiên `three_wheeler` 0.61), quang gánh ở img_014 (0.63), xe minibus ở img_018 (0.53, lỗi này đến vòng QC 2 mình mới phát hiện ra).
+  - Tệ nhất là `three_wheeler`: 20/41 box sinh ra bị mình xoá (49%), 6/41 phải sửa, chỉ giữ nguyên 15/41. YOLOE thường xuyên nhận nhầm các vật thể có hình khối hộp thành xe ba bánh, lỗi này lặp lại nhiều lần: xe tải thùng kín ở img_003 (YOLO26 bắt đúng là `truck` 0.87 nhưng luật gộp lại ưu tiên `three_wheeler` 0.61), quang gánh ở img_014 (0.63), xe minibus ở img_018 (0.53, lỗi này đến vòng QC 2 mình mới phát hiện ra).
   - `truck` cũng có tỉ lệ sai 100%: toàn bộ 6/6 box đều bị xoá. Đa số là xe ba bánh hoặc xe van bị YOLO26 gán nhầm thành `truck`, chẳng hạn chiếc xe van chở khách ở img_013 được mình sửa lại thành `car`.
-  - `person` và `motorbike` chiếm số lượng áp đảo nhưng chất lượng ổn định: giữ nguyên 340/378 và 159/198. Lỗi chủ yếu là sinh box thừa ở các vật thể quá nhỏ, ở xa, hoặc người và xe bị nhoè trong bối cảnh ban đêm ở img_022.
+  - `person` và `motorbike` chiếm số lượng áp đảo nhưng chất lượng ổn định: giữ nguyên 338/378 và 158/198. Lỗi chủ yếu là sinh box thừa ở các vật thể quá nhỏ, ở xa, hoặc người và xe bị nhoè trong bối cảnh ban đêm ở img_022.
 - So với gold: precision đạt 74.7% (65/87 box pre-label, KTC 95%: 65–83%), recall đạt 75.6% (65/86, KTC 95%: 66–83%). Mẫu số là 86 đối tượng gold trên 4 ảnh. Các con số này cũng mang tính lạc quan vì ngưỡng tự tin được chọn ngay trên chính 4 ảnh này.
 
 ## 3. Thiên kiến tự động hóa và ảnh bẫy
@@ -61,7 +61,7 @@ Trong nhóm `deleted` và `added` có 12 trường hợp thực chất là đổ
 ## 4. Đánh giá hiệu quả của pre-label
 
 - Thời gian thực hiện (từ `time_log.csv`): Gán nhãn thủ công hoàn toàn mất 29 phút cho 4 ảnh, trung bình khoảng 7.3 phút/ảnh. Duyệt trên nền pre-label mất 65 phút cho 24 ảnh, trung bình khoảng 2.7 phút/ảnh, tức nhanh hơn gần 3 lần. Con số này có độ chênh lệch nhất định do mình làm tập gold trước nên đã quen thuộc với bối cảnh và quy chuẩn (guideline), đồng thời mật độ đối tượng trong tập batch cũng phân bố không đồng đều. Ngoài ra, thời gian duyệt lại sau khi kiểm tra bẫy và thời gian chỉnh sửa hậu QC chưa được cộng vào mốc 65 phút, nên thời gian thực tế sẽ cao hơn.
-- Kết luận: Rất hiệu quả đối với các lớp `person`, `motorbike`, `car`, `bicycle` (tỉ lệ giữ nguyên đạt 340/378, 159/198, 50/54; recall trên gold đạt 75.6%). Riêng với `three_wheeler` và `truck`, pre-label chỉ nên đóng vai trò tham khảo vì có tới 51% và 100% số box của hai lớp này bị xoá bỏ, đòi hỏi phải kiểm tra thủ công từng đối tượng.
+- Kết luận: Rất hiệu quả đối với các lớp `person`, `motorbike`, `car`, `bicycle` (tỉ lệ giữ nguyên đạt 338/378, 158/198, 48/54; recall trên gold đạt 75.6%). Riêng với `three_wheeler` và `truck`, pre-label chỉ nên đóng vai trò tham khảo vì có tới 49% và 100% số box của hai lớp này bị xoá bỏ, đòi hỏi phải kiểm tra thủ công từng đối tượng.
 - **Ba quy tắc giảm thiên kiến tự động hóa**:
   1. Quan sát tổng thể ảnh trước khi bật lớp nhãn pre-label: Đếm nhẩm số lượng người, xe máy, xe ba bánh rõ nét rồi đối chiếu với tổng số box hiện có; nếu thấy chênh lệch lớn thì chủ động tìm các vùng bị sót. Đo lường hiệu quả qua số bẫy `missing` bắt được.
   2. Phóng to các box ở vùng tối, đối tượng kích thước nhỏ hoặc biên mờ và kéo lại cạnh cho ôm sát vật thể (sai số không quá 2 px). Đo lường qua bẫy `loose`: mục tiêu nâng từ 0/3 lên 3/3.
